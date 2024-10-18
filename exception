@@ -1,1 +1,6 @@
 du -a -h --max-depth=1 | sort -hr
+
+find . -maxdepth 1 -exec du -sh {} + | sort -hr | while read size file; do
+    mod_time=$(stat -c "%y" "$file")
+    echo "$size  $mod_time  $file"
+done
