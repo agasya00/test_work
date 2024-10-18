@@ -4,3 +4,9 @@ find . -maxdepth 1 -exec du -sh {} + | sort -hr | while read size file; do
     mod_time=$(stat -c "%y" "$file")
     echo "$size  $mod_time  $file"
 done
+
+du -a --max-depth=1 | sort -hr | awk '{print $2}' | while read file; do
+    mod_time=$(stat -c "%y" "$file")
+    size=$(du -sh "$file" | awk '{print $1}')
+    echo "$size  $mod_time  $file"
+done
