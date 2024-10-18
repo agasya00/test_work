@@ -1,18 +1,1 @@
-@ExceptionHandler(MessageNotFoundException.class)
-public ResponseEntity<ErrorResponse> handleMessageNotFound(MessageNotFoundException ex) {
-    ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND.value());
-    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
-}
-
-
-public class ErrorResponse {
-    private String message;
-    private int status;
-
-    public ErrorResponse(String message, int status) {
-        this.message = message;
-        this.status = status;
-    }
-
-    // Getters and setters
-}
+du -a -h --max-depth=1 | sort -hr
