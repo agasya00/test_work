@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Set variables
+DIRECTORY="/path/to/your/directory"  # Change to your target directory
+DAYS_OLD=30                           # Files older than this many days will be removed
+LOG_FILE="/path/to/your/logfile.log" # Change to your desired log file location
+
+# Function to log messages
+log_message() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
+}
+
+# Start the cleanup process
+log_message "Starting cleanup of old files in $DIRECTORY older than $DAYS_OLD days."
+
+# Find and delete old files
+find "$DIRECTORY" -type f -mtime +$DAYS_OLD -exec rm -f {} \; -print | while read file; do
+    log_message "Removed: $file"
+done
+
+# Optionally, remove empty directories
+find "$DIRECTORY" -type d -empty -delete -print | while read dir; do
+    log_message "Removed empty directory: $dir"
+done
+
+log_message "Cleanup completed."
