@@ -24,3 +24,9 @@ find "$DIRECTORY" -type d -empty -delete -print | while read dir; do
 done
 
 log_message "Cleanup completed."
+
+Make the Script Executable:
+chmod +x cleanup_old_files.sh
+
+Run the Script:
+./cleanup_old_files.sh
