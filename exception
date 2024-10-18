@@ -10,3 +10,5 @@ du -a --max-depth=1 | sort -hr | awk '{print $2}' | while read file; do
     size=$(du -sh "$file" | awk '{print $1}')
     echo "$size  $mod_time  $file"
 done
+
+Write a script to remove these unnecesary files and do a one time cleanup from PROD
