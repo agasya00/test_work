@@ -1,0 +1,6 @@
+search_dir="/path/to/search"
+find "$search_dir" -type f -name "*.jar" | while read jar_file; do
+    if ! find "$search_dir" -type l -lname "$jar_file" | grep -q .; then
+        echo "Deleting: $jar_file"
+    fi
+done
