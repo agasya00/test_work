@@ -1,0 +1,20 @@
+Work done in ebfs
+3399-trse api endpoint exposed in ebfs via restTemplate
+3461-integrate propstore in surveillance
+3492-write camel route for BGC to handle ack/nacks, listen from the topic and write pdm message in csv file
+log printing bug fixed in ebfs host 
+3615,3495-unit test cases for tactical and surveillance 
+3757-pulsar propstore
+Work done in trse
+axotc-3711 new springboot3 prj with new BRD FO Screen from scratch 
+axotc-4192 - time analysis between all cols vs 15 columns
+axotc-4168 - unit test cases for consumer subcription
+4192 - time analysis for 15 vs all cols of mhv 2
+4168 - 4055 test cases 3
+4271 - exception handling n 1000 rows scenario handled 2
+4284 - query/code optimization done for 4192 slowness 2
+4192 - time analysis for 15 vs all cols of mhv 2
+4168 - 4055 test cases 3
+4271 - exception handling n 1000 rows scenario handled 2
+4284 - query/code optimization done for 4192 slowness 2
+4221 trse prod cleanup 
